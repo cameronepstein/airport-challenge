@@ -8,5 +8,5 @@ beforeEach(function () {
   it that 'setLanded' is a valid method call and should be tracked.
   */
 
-  planeSpy = jasmine.createSpyObj('planeSpy', ['setLanded']);
+  planeSpy = jasmine.createSpyObj('planeSpy', ['setLanded', 'takeOff']);
 });

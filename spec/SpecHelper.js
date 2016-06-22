@@ -1,6 +1,7 @@
 beforeEach(function () {
   plane = new Plane;
-  airport = new Airport;
+  weather = new Weather;
+  airport = new Airport(weather);
 
   /*
   airportSpy allows us to create a 'fake' plane object which does nothing
@@ -9,4 +10,7 @@ beforeEach(function () {
   */
 
   planeSpy = jasmine.createSpyObj('planeSpy', ['setLanded', 'takeOff']);
+  weatherSpy = jasmine.createSpyObj('weatherSpy', ['current']);
+  spyAirport = new Airport(weatherSpy);
+  spyOn(weather, 'current').and.returnValue('sunny')
 });
